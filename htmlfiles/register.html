@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Registration</title>
+    <link rel="stylesheet" type="text/css" href="../cssfiles/style2.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="icon" href="../assets/loginicon.png" type="image/png">
+</head>
+
+<body>
+    <section>
+        <form id="registrationForm" >
+            <h1>Register Now ! </h1>
+            <div class="inputbox">
+                <input type="text" id="first_name" name="first_name" placeholder="First Name" required>
+                <i class='bx bxs-user'></i>
+                <label for="first_name">First Name</label>
+            </div>
+            <div class="inputbox">
+                <input type="text" id="last_name" name="last_name" placeholder="Last Name" required>
+                <i class='bx bxs-user'></i>
+                <label for="last_name">Last Name</label>
+            </div>
+            <div class="inputbox">
+                <input type="email" id="email" name="email" placeholder="Email" required>
+                <i class='bx bxs-envelope'></i>
+                <label for="email">Email</label>
+            </div>
+            <div class="inputbox">
+                <input type="password" id="password" name="password" placeholder="Password" required>
+                <label for="password">Password</label>
+                <span class="toggle-password" onclick="togglePasswordVisibility()"><i class='bx bx-low-vision'></i></span>
+                <p id="message">Password is <span id="strength"></span> </p>
+            </div>
+            <button type="submit">Register</button>
+            <div class="register">
+                <p>Already have an account? <a href="./login.html">Login</a></p>
+            </div>
+        </form>
+    </section>
+
+    <script>
+        function togglePasswordVisibility() {
+            var passwordInput = document.getElementById("password");
+            var toggleButton = document.querySelector(".toggle-password i");
+
+            if (passwordInput.type === "password") {
+                passwordInput.type = "text";
+                toggleButton.classList.remove("bx-low-vision");
+                toggleButton.classList.add("bx-show");
+            } else {
+                passwordInput.type = "password";
+                toggleButton.classList.remove("bx-show");
+                toggleButton.classList.add("bx-low-vision");
+            }
+        }
+
+        var pass = document.getElementById("password");
+        var msg = document.getElementById("message");
+        var strength = document.getElementById("strength");
+
+        pass.addEventListener('input', () => {
+            if (pass.value.length > 0) {
+                msg.style.display = "block";
+            } else {
+                msg.style.display = "none";
+            }
+            if (pass.value.length < 4) {
+                strength.innerHTML = "very weak";
+                pass.style.borderColor = "red";
+                msg.style.color = "red";
+            } else if (pass.value.length >= 4 && pass.value.length < 6) {
+                strength.innerHTML = "weak";
+                pass.style.borderColor = "orange";
+                msg.style.color = "orange";
+            } else if (pass.value.length >= 6 && pass.value.length < 8) {
+                strength.innerHTML = "medium";
+                pass.style.borderColor = "yellow";
+                msg.style.color = "yellow";
+            } else if (pass.value.length >= 8 && pass.value.length < 12) {
+                strength.innerHTML = "strong";
+                pass.style.borderColor = "green";
+                msg.style.color = "green";
+            } else if (pass.value.length >= 12) {
+                strength.innerHTML = "very strong";
+                pass.style.borderColor = "blue";
+                msg.style.color = "blue";
+            }
+        });
+    </script>
+</body>
+
+</html>

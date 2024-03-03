@@ -1,0 +1,129 @@
+.home{
+    position: relative;
+}
+
+/*remove white spaces*/
+*{
+    margin: 0;
+    padding: 0;
+}
+/* make the img as a backround*/
+.home img{
+    width: 100%;
+    height: 100vh;/*height of full screen image that why we used vh*/
+    object-fit: cover;
+    border-radius: 0.2%;
+    filter: brightness(0.8);
+}
+/*make the comment"consomi tounsi "inside the home page"*/
+.home .consomi{
+    color: rgb(232, 227, 220);
+    margin: 10%;
+    position: absolute;
+    left: 1%;
+    top:10%; 
+}
+/*make the font of the head"consomi tounsi" bigger*/
+.home .consomi h1{
+    font-size: 72px;
+}
+/*styling the nav bar css code*/
+nav{
+    background-color: rgb(224, 214, 108);
+    /*make the backround of the nav bar bigger*/
+    padding: 50px;
+    /*border-radius: 2%;*/
+    filter: brightness(0.9);
+}
+nav ul{
+    list-style: none;
+    margin-left:60%;
+    padding: 0; 
+    text-align: center;
+
+ }
+
+nav ul li {
+    display: inline;
+    margin-right: 40px;
+    }
+
+nav a{
+    text-decoration: none ;
+    color: rgba(6, 6, 5, 0.867);
+    font-size: 20px ;
+    transition: color 0.3s ease; 
+} 
+nav a:hover{
+    color: rgb(130, 85, 33);
+    animation: fadeInUp 1s ease-in-out;
+    animation: fadeIn 1s ease-in-out;
+
+}
+.carousel-item-active img{
+    background-size: cover;
+    width: 100%;
+    height: 100vh;/*height of full screen image that why we used vh*/
+    object-fit: cover;
+    border-radius: 0.2%;
+    filter: brightness(0.7);
+}
+.carousel-item img{
+    background-size: cover;
+    width: 100%;
+    height: 100vh;/*height of full screen image that why we used vh*/
+    object-fit: cover;
+    border-radius: 0.2%;
+    filter: brightness(0.5);
+}
+footer {
+    background-color: #648134;
+    color: #eae8e8;
+    text-align: center;
+    padding: 30px 0;
+}
+/* Add this style for social media icons */
+.social-icons {
+    margin-top: 20px;
+    text-align: center;
+    }
+.icon {
+    display: inline-block;
+    font-size: 24px;
+    margin: 0 10px;
+    color: #f6f4f4;
+    transition: color 0.3s ease-in-out;
+    }
+.icon:hover {
+    color: #e9cb0b;
+    animation: bounceIn 1s infinite;
+    }
+
+nav a i, h1 i, button i {
+        margin-right: 5px;}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+        }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+        }
+            }
+@keyframes fadeIn {
+    from {
+        opacity: 0; }
+    to {
+        opacity: 1;}}
+@keyframes bounceIn {
+        0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);}
+        40% {
+            transform: translateY(-20px);}
+        60% {
+            transform: translateY(-10px);
+            }
+                    }
+

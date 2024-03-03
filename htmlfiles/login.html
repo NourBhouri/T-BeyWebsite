@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Login</title>
+    <link rel="stylesheet" type="text/css" href="../cssfiles/style2.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="icon" href="../assets/loginicon.png" type="image/png">
+</head>
+
+<body>
+    <section>
+        <form>
+            <h1>Login</h1>
+            <div class="inputbox">
+                <input type="email" placeholder="Email" required>
+                <i class='bx bxs-user'></i>
+                <label for="">Email</label>
+            </div>
+            <div class="inputbox">
+                <input type="password" placeholder="Password" required>
+                <i class='bx bxs-lock-alt' ></i>
+                <label for="">Password</label>
+            </div>
+            <div class="forget">
+                <label><label for=""></label><input type="checkbox">Remember me</label>
+                <a href="#">Forgot password ?</a>
+            </div>
+            <button >Login</button>
+            <div class="register">
+                <p>Don't have an account ? <a href="./register.html" > Register</a></p>
+            </div>
+
+        </form>
+    </section>
+    <script>
+        function togglePasswordVisibility() {
+            var passwordInput = document.getElementById("password");
+            var toggleButton = document.querySelector(".toggle-password i");
+
+            if (passwordInput.type === "password") {
+                passwordInput.type = "text";
+                toggleButton.classList.remove("bx-low-vision");
+                toggleButton.classList.add("bx-show");
+            } else {
+                passwordInput.type = "password";
+                toggleButton.classList.remove("bx-show");
+                toggleButton.classList.add("bx-low-vision");
+            }
+        }
+    </script>
+</body>
+
+</html>
